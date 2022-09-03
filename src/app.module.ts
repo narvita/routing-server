@@ -4,15 +4,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { AdminsModule } from './admins/admins.module';
+import { dbUrl } from './environment';
 
 @Module({
-  imports: [
-    MongooseModule.forRoot(
-      'mongodb+srv://Vahe27:Qwerty1234)@cluster0.7qpjgen.mongodb.net/resurce',
-    ),
-    UsersModule,
-    AdminsModule,
-  ],
+  imports: [MongooseModule.forRoot(dbUrl.url), UsersModule, AdminsModule],
   controllers: [AppController],
   providers: [AppService],
 })

@@ -7,8 +7,6 @@ export class AdminsController {
 
   @Get()
   findAll() {
-    console.log();
-
     return this.adminsService.findAll();
   }
 }
